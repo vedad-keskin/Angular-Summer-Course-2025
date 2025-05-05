@@ -67,7 +67,7 @@ export class StudentsComponent implements OnInit, AfterViewInit {
 
 
   applyFilter(event: Event): void {
-    const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
+    const filterValue = (event.target as HTMLInputElement).value.trim();
     this.searchSubject.next(filterValue);
   }
 
