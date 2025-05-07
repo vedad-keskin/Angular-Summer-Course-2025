@@ -19,11 +19,18 @@ import {MyDialogSimpleComponent} from '../../shared/dialogs/my-dialog-simple/my-
   standalone: false
 })
 export class StudentsComponent implements OnInit, AfterViewInit {
+
+
   displayedColumns: string[] = ['firstName', 'lastName', 'studentNumber', 'actions'];
   dataSource: MatTableDataSource<StudentGetAllResponse> = new MatTableDataSource<StudentGetAllResponse>();
   students: StudentGetAllResponse[] = [];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+
+  // Nase varijable
+
+  showDeleted: boolean = false;
+
 
   constructor(
     private studentGetService: StudentGetAllEndpointService,
@@ -56,7 +63,11 @@ export class StudentsComponent implements OnInit, AfterViewInit {
       pageSize: pageSize
     }).subscribe({
       next: (data) => {
-        this.dataSource = new MatTableDataSource<StudentGetAllResponse>(data.dataItems);
+        this.dataSource = new MatTableDataSource<StudentGetAllResponse>(
+
+          this.showDeleted ? data.dataItems : data.dataItems.filter(x=> !x.isDeleted)
+
+        );
         this.paginator.length = data.totalCount;
       },
       error: (err) => {
@@ -110,5 +121,12 @@ export class StudentsComponent implements OnInit, AfterViewInit {
         message: 'Implementirajte matičnu knjigu?'
       }
     });
+  }
+
+  toggleDeleted() {
+
+    this.showDeleted = !this.showDeleted;
+    this.fetchStudents();
+
   }
 }
