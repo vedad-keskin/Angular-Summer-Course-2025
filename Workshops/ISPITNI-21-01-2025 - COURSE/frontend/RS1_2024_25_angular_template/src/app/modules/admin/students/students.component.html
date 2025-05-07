@@ -42,9 +42,16 @@
         <mat-icon>edit</mat-icon>
         Edit
       </button>
+
+
       <button (click)="openMyConfirmDialog(student.id)" color="warn" mat-button>
         <mat-icon>delete</mat-icon>
         Delete
+      </button>
+
+      <button (click)="openMyConfirmDialogForRestore(student.id)" color="warn" mat-button>
+        <mat-icon>restore</mat-icon>
+        Restore
       </button>
 
       <button (click)="openStudentSemesters(student.id)" color="warn" mat-button>
