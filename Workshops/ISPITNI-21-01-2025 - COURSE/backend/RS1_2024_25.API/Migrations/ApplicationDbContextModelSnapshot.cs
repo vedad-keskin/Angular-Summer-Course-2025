@@ -36,7 +36,7 @@ namespace RS1_2024_25.API.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DateOfEnrollemnt")
+                    b.Property<DateTime>("DateOfEnrollment")
                         .HasColumnType("datetime2");
 
                     b.Property<float>("Price")

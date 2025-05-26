@@ -8,7 +8,7 @@ export interface SemesterGetAllByStudentIdResponse {
   academicYearDescription:string;
   yearOfStudy:number;
   renewal:boolean;
-  dateOfEnrollemnt:Date;
+  dateOfEnrollment:Date;
   recordedByName:string;
 }
 

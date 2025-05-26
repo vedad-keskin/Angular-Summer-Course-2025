@@ -67,7 +67,7 @@ export class StudentSemestersNewComponent implements OnInit {
       academicYearId: [1, [Validators.required]],
       studentId: [this.studentId , [Validators.required]],
       recordedById: [this.loggedInUserId , [Validators.required]],
-      dateOfEnrollemnt: [new Date() , [Validators.required]],
+      dateOfEnrollment: [new Date , [Validators.required]],
       yearOfStudy: [ null , [Validators.required]],
       price: [  {value: null , disabled: true } , [Validators.required, Validators.min(50), Validators.max(2000)]],
       renewal: [ {value: false , disabled: true } , [Validators.required]],

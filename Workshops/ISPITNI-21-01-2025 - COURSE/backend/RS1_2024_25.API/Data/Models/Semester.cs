@@ -34,7 +34,7 @@ namespace RS1_2024_25.API.Data.Models
         //• obnova: bool disabled* (automatski se setuje na true ako student upisuje istu godinu studija,
         //inače na false)
 
-        public DateTime DateOfEnrollemnt { get; set; }
+        public DateTime DateOfEnrollment { get; set; }
         public int YearOfStudy { get; set; }
         public float Price { get; set; }
         public bool Renewal { get; set; }

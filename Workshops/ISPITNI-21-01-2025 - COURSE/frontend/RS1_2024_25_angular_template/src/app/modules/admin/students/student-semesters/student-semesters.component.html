@@ -32,7 +32,7 @@
 
   <ng-container matColumnDef="dateOfEnrollment">
     <mat-header-cell *matHeaderCellDef mat-sort-header>Winter Semester</mat-header-cell>
-    <mat-cell *matCellDef="let semester">{{ semester.dateOfEnrollemnt | date:'yyyy-MM-dd' }}</mat-cell>
+    <mat-cell *matCellDef="let semester">{{ semester.dateOfEnrollment | date:'yyyy-MM-dd' }}</mat-cell>
   </ng-container>
 
 
@@ -43,7 +43,7 @@
 
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: displayedColumns;" [class.obrisano]="row.isDeleted == true" ></mat-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;" ></mat-row>
 </table>
 
 

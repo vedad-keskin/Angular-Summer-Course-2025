@@ -50,7 +50,7 @@ public class SemesterUpdateOrInsertEndpoint(ApplicationDbContext db) : MyEndpoin
         semester.StudentId = request.StudentId;
         semester.RecordedById = request.RecordedById;
         semester.Price = request.Price;
-        semester.DateOfEnrollemnt = request.DateOfEnrollemnt;
+        semester.DateOfEnrollment = request.DateOfEnrollment;
         semester.YearOfStudy = request.YearOfStudy;
         semester.Renewal = request.Renewal;
 
@@ -66,7 +66,7 @@ public class SemesterUpdateOrInsertEndpoint(ApplicationDbContext db) : MyEndpoin
         public int AcademicYearId { get; set; } // FK na AcademicYear
         public int StudentId { get; set; } // FK na Student
         public int RecordedById { get; set; } // FK na RecordedBy
-        public DateTime DateOfEnrollemnt { get; set; }
+        public DateTime DateOfEnrollment { get; set; }
         public int YearOfStudy { get; set; }
         public float Price { get; set; }
         public bool Renewal { get; set; }

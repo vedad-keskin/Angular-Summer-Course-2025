@@ -8,7 +8,7 @@ export interface SemesterUpdateOrInsertRequest {
   academicYearId:number;
   studentId:number;
   recordedById:number;
-  dateOfEnrollemnt:Date;
+  dateOfEnrollment:Date;
   yearOfStudy:number;
   price:number;
   renewal:boolean;

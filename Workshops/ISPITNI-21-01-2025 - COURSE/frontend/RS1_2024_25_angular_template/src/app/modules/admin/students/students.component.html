@@ -64,7 +64,7 @@
 
   <!-- Table Header and Rows -->
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: displayedColumns;" [class.obrisano]="row.isDeleted == true" ></mat-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;" [class.obrisano]="row.isDeleted" ></mat-row>
 </table>
 
 <mat-paginator [length]="students.length" [pageSizeOptions]="[5, 10, 20]" [pageSize]="5"

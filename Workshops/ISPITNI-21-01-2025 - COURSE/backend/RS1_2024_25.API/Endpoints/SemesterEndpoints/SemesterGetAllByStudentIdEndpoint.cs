@@ -25,11 +25,11 @@ public class SemesterGetAllByStudentIdEndpoint(ApplicationDbContext db) : MyEndp
                         .Select(c => new SemesterGetAllByStudentIdResponse
                         {
                             ID = c.ID,
-                            AcademicYearDescription = $"{c.AcademicYear.StartDate.Year}-{c.AcademicYear.EndDate.Year % 100}",
+                            AcademicYearDescription = $"{c.AcademicYear!.StartDate.Year}-{c.AcademicYear.EndDate.Year % 100}",
                             YearOfStudy = c.YearOfStudy,
                             Renewal = c.Renewal,
-                            DateOfEnrollemnt = c.DateOfEnrollemnt,
-                            RecordedByName = c.RecordedBy.FirstName,
+                            DateOfEnrollment = c.DateOfEnrollment,
+                            RecordedByName = c.RecordedBy!.FirstName,
                         })
                         .ToArrayAsync(cancellationToken);
 
@@ -42,7 +42,7 @@ public class SemesterGetAllByStudentIdEndpoint(ApplicationDbContext db) : MyEndp
         public string? AcademicYearDescription { get; set; }
         public int YearOfStudy { get; set; }
         public bool Renewal { get; set; }
-        public DateTime DateOfEnrollemnt { get; set; }
+        public DateTime DateOfEnrollment { get; set; }
         public string? RecordedByName { get; set; }
 
 
